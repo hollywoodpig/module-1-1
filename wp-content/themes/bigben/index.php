@@ -2,8 +2,7 @@
 	get_header();
 
 	$teachers = new WP_Query([
-		'post_type' => 'teachers',
-		'posts_per_page' => -1
+		'post_type' => 'teachers'
 	]);
 
 	$news = new WP_Query([
@@ -92,6 +91,9 @@
 								<p class="item__text"><?= get_the_excerpt(); ?></p>
 							</div>
 						<?php endwhile; ?>
+					</div>
+					<div class="space-t">
+						<a href="<?= get_page_link(68) ?>" class="btn">Полный список преподавателей</a>
 					</div>
 				<?php else: ?>
 					<p>Это странно, но у нас пока что никто не работает.</p>
