@@ -29,7 +29,7 @@
 
 	add_action('after_setup_theme', 'menu');
 
-	// disable tags and categories
+	// news taxonomy
 
 	function flat_posts() {
 		register_taxonomy('category', array());
@@ -37,6 +37,16 @@
 	}
 
 	add_action('init', 'flat_posts');
+
+	function rename_posts($args) {
+		foreach($args as $key => $label){
+			$args->{$key} = str_replace([__('Posts'), __('Post')], __('Новости'), $label);
+		}
+
+		return $args;
+	}
+
+	add_filter('post_type_labels_post', 'rename_posts');
 
 	// teachers taxonomy
 
