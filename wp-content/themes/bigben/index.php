@@ -6,7 +6,7 @@
 		<div class="container">
 			<div class="first-screen__content">
 				<h1><?= get_bloginfo('name') ?></h1>
-				<p class="text-muted">Услуги дошкольного образования</p>
+				<p class="text-muted"><?= get_bloginfo('description') ?></p>
 			</div>
 		</div>
 	</div>

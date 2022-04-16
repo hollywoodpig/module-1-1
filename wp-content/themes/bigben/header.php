@@ -30,14 +30,13 @@
 				</div>
 				<div class="header__footer">
 					<nav class="nav nav_mobile <?= is_home() ? 'nav_home' : '' ?>">
-						<ul class="nav__menu">
-							<li><a href="#">Главная</a></li>
-							<li><a href="#">О нас</a></li>
-							<li><a href="#">Наши школы</a></li>
-							<li><a href="#">Новости</a></li>
-							<li><a href="#">Наши услуги</a></li>
-							<li><a href="#">Преподаватели</a></li>
-						</ul>
+						<?php
+							wp_nav_menu(array(
+								'theme_location' => 'main_menu',
+								'container' => 'ul',
+								'menu_class' => 'nav__menu'
+							));
+						?>
 					</nav>
 				</div>
 			</div>
