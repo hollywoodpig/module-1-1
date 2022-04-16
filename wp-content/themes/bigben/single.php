@@ -9,6 +9,9 @@
 			</div>
 			<div class="section__content">
 				<div class="post">
+					<?php if(has_post_thumbnail()): ?>
+						<img class="post__img" src="<?= get_the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
+					<?php endif; ?>
 					<?php the_content(); ?>
 				</div>
 			</div>

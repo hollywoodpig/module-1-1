@@ -2,7 +2,8 @@
 	get_header();
 
 	$teachers = new WP_Query([
-		'post_type' => 'teachers'
+		'post_type' => 'teachers',
+		'posts_per_page' => -1
 	]);
 
 	$news = new WP_Query([
