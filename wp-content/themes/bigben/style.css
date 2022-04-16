@@ -32,7 +32,6 @@
 	--trs: .4s ease;
 	/* overlay */
 	--overlay: rgba(0, 0, 0, .4);
-	--blur: blur(20rem) saturate(200%);
 }
 
 /* resets */
@@ -377,6 +376,7 @@ small {
 	padding: 3rem 6rem;
 	color: #fff;
 	transition: opacity var(--trs);
+	cursor: pointer;
 }
 
 .btn:hover {
@@ -422,6 +422,10 @@ small {
 
 .input::placeholder {
 	color: var(--text-muted-color);
+}
+
+.input_bg-color {
+	background: #fff;
 }
 
 /* teachers */

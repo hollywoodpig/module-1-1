@@ -80,6 +80,28 @@
 	 
 	add_action('init', 'schools_taxonomy', 0);
 
+	// services taxonomy
+
+	function services_taxonomy() {
+		register_post_type('services', [
+			'label' => 'Услуги',
+			'supports' => ['title', 'excerpt'],
+			'hierarchical' => false,
+			'publicly_queryable' => true,
+			'show_ui' => true,
+			'show_in_menu' => true,
+			'menu_position' => 5,
+			'can_export' => true,
+			'rewrite' => [
+				'slug' => 'services',
+				'with_front' => false
+			]
+		]);
+	}
+	 
+	add_action('init', 'services_taxonomy', 0);
+	register_taxonomy('categories', ['services'], ['hierarchical' => true, 'label' => 'Направления']);
+
 	// pagination add class
 
 	function add_pagination_class() {
