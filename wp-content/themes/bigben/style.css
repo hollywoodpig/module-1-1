@@ -149,6 +149,16 @@ small {
 	z-index: 2;
 }
 
+.header .logo {
+	flex: 0 1 70rem;
+	text-align: left;
+}
+
+.header .phone {
+	flex: 0 1 70rem;
+	text-align: right;
+}
+
 .header__content {
 	display: flex;
 	align-items: center;
