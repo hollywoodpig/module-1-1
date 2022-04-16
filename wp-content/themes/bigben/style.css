@@ -245,6 +245,8 @@ small {
 }
 
 .section__heading {
+	display: grid;
+	gap: var(--gap-sm);
 	margin-bottom: 15rem;
 }
 
@@ -268,7 +270,7 @@ small {
 	display: flex;
 	align-items: center;
 	color: #fff;
-	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 95%);
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
 }
 
 .first-screen__content {
@@ -564,13 +566,13 @@ small {
 /* wp admin */
 
 @media (max-width: 782px) {
-	body.wp-admin .header_active {
+	body.is-admin.is-home .header {
 		top: 46px;
 	}
 }
 
 @media (min-width: 783px) {
-	body.wp-admin .header_active {
+	body.is-admin .header {
 		top: 32px;
 	}
 }

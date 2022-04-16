@@ -2,6 +2,11 @@
 	/* Template name: schools */
 
 	get_header();
+
+	$schools = new WP_Query([
+		'post_type' => 'school',
+		'posts_per_page' => -1
+	]);
 ?>
 
 <main>
@@ -11,33 +16,21 @@
 				<h1><?php the_title(); ?></h1>
 			</div>
 			<div class="section__content">
-				<div class="grid">
-					<div class="item item_card">
-						<img class="item__img" src="<?= get_template_directory_uri() . '/assets/img/school-1.jpg' ?>" alt="Школа № 1">
-						<strong class="item__title">Школа № 1</strong>
-						<p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+				<?php if($schools->have_posts()): ?>
+					<div class="grid">
+						<?php while($schools->have_posts()): $schools->the_post(); ?>
+							<div class="item item_card">
+								<?php if(has_post_thumbnail()): ?>
+									<img class="item__img" src="<?= get_the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
+								<?php endif; ?>
+								<strong class="item__title"><?php the_title(); ?></strong>
+								<p class="item__text"><?= get_the_excerpt(); ?></p>
+							</div>
+						<?php endwhile; ?>
 					</div>
-					<div class="item item_card">
-						<img class="item__img" src="<?= get_template_directory_uri() . '/assets/img/school-2.jpg' ?>" alt="Школа № 2">
-						<strong class="item__title">Школа № 2</strong>
-						<p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-					</div>
-					<div class="item item_card">
-						<img class="item__img" src="<?= get_template_directory_uri() . '/assets/img/school-3.jpg' ?>" alt="Школа № 3">
-						<strong class="item__title">Школа № 3</strong>
-						<p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-					</div>
-					<div class="item item_card">
-						<img class="item__img" src="<?= get_template_directory_uri() . '/assets/img/school-4.jpg' ?>" alt="Школа № 4">
-						<strong class="item__title">Школа № 4</strong>
-						<p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-					</div>
-					<div class="item item_card">
-						<img class="item__img" src="<?= get_template_directory_uri() . '/assets/img/school-5.jpg' ?>" alt="Школа № 5">
-						<strong class="item__title">Школа № 5</strong>
-						<p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-					</div>
-				</div>
+				<?php else: ?>
+					<p>Похоже, мы так и не открыли ни одной школы.</p>
+				<?php endif; ?>
 			</div>
 		</div>
 	</div>

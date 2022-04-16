@@ -1,3 +1,15 @@
+<?php
+	$classes = [];
+
+	if (is_home()) {
+		$classes[] = 'is-home';
+	}
+	
+	if (is_admin_bar_showing()) {
+		$classes[] = 'is-admin';
+	}
+?>
+
 <!doctype html>
 <html lang="ru">
 	<head>
@@ -5,7 +17,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php wp_head(); ?>
 	</head>
-	<body class="<?= is_home() && is_admin_bar_showing() ? 'wp-admin' : '' ?>">
+	<body class="<?= implode(' ', $classes) ?>">
 		<header class="header <?= is_home() ? 'header_active' : '' ?>">
 			<div class="container">
 				<div class="header__content">
