@@ -7,11 +7,7 @@
 					<li class="legal__item">ИНН: 3904014901</li>
 					<li class="legal__item">БИК: 012748051</li>
 				</ul>
-				<ul class="socials">
-					<li><a href="#">Instagram</a></li>
-					<li><a href="#">Facebook</a></li>
-					<li><a href="#">Twitter</a></li>
-				</ul>
+				<?php dynamic_sidebar('main_sidebar'); ?>
 			</div>
 		</div>
 	</footer>

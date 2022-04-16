@@ -1,4 +1,5 @@
 <?php
+
 	// assets
 
 	function assets() {
@@ -77,3 +78,18 @@
 
 	add_filter('next_posts_link_attributes', 'add_pagination_class');
 	add_filter('previous_posts_link_attributes', 'add_pagination_class');
+
+	// socials
+
+	function social_sidebar() {
+		register_sidebar([
+			'name' => 'main_sidebar',
+			'id' => 'main_sidebar',
+			'before_widget' => '<div>',
+			'after_widget' => '</div>',
+			'before_title' => '<h2>',
+			'after_title' => '</h2>',
+		]);
+	}
+
+	add_action('widgets_init', 'social_sidebar');

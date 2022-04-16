@@ -530,6 +530,34 @@ small {
 	border-radius: var(--bdrs);
 }
 
+/* socials */
+
+.social-icons {
+	color: unset;
+	padding-top: 0;
+	position: static;
+	margin: 0;
+	text-align: left;
+	display: flex;
+	gap: var(--gap-sm);
+}
+
+.social-icons a {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
+	width: 20rem;
+	height: 20rem;
+	transition: opacity var(--trs);
+}
+
+.social-icons a:hover {
+	opacity: 0.8;
+}
+
 /* == media == */
 
 /* max width */
