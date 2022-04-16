@@ -5,7 +5,7 @@
 	<div class="first-screen overlay" style="background-image: url('<?= get_template_directory_uri() . '/assets/img/first-screen.jpg' ?>')">
 		<div class="container">
 			<div class="first-screen__content">
-				<h1>Big Ben</h1>
+				<h1><?= get_bloginfo('name') ?></h1>
 				<p class="text-muted">Услуги дошкольного образования</p>
 			</div>
 		</div>
@@ -32,7 +32,7 @@
 						<div class="item">
 							<strong class="item__title">Доступные цены</strong>
 						</div>
-						<a href="#" class="btn">Записаться</a>
+						<a href="<?= get_page_link(66); ?>" class="btn">Записаться</a>
 					</div>
 				</div>
 			</div>
@@ -125,25 +125,25 @@
 				<h2>Последние новости</h2>
 			</div>
 			<div class="section__content">
-				<div class="news">
-					<div class="item item_card">
+				<div class="grid">
+					<a href="#" class="item item_card">
 						<img class="item__img" src="<?= get_template_directory_uri() . '/assets/img/news-1.jpg' ?>" alt="Рыженков Михаил Александрович">
 						<strong class="item__title">Мы обанкротились</strong>
 						<p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-					</div>
-					<div class="item item_card">
+					</a>
+					<a href="#" class="item item_card">
 						<img class="item__img" src="<?= get_template_directory_uri() . '/assets/img/news-2.jpg' ?>" alt="Рыженков Михаил Александрович">
 						<strong class="item__title">Билайн - живи на яркой стороне</strong>
 						<p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-					</div>
-					<div class="item item_card">
+					</a>
+					<a href="#" class="item item_card">
 						<img class="item__img" src="<?= get_template_directory_uri() . '/assets/img/news-3.jpg' ?>" alt="Рыженков Михаил Александрович">
 						<strong class="item__title">У нас работает 90 млн монголов</strong>
 						<p class="item__text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-					</div>
+					</a>
 				</div>
 				<div class="space-t">
-					<a href="#" class="btn">Посмотреть все новости</a>
+					<a href="<?= get_page_link(64) ?>" class="btn">Посмотреть все новости</a>
 				</div>
 			</div>
 		</div>
