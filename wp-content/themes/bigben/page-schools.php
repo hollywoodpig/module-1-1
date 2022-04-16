@@ -10,7 +10,7 @@
 ?>
 
 <main>
-	<div class="section">
+	<section class="section">
 		<div class="container">
 			<div class="section__heading">
 				<h1><?php the_title(); ?></h1>
@@ -33,7 +33,7 @@
 				<?php endif; ?>
 			</div>
 		</div>
-	</div>
+	</section>
 </main>
 
 <?php get_footer(); ?>

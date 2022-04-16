@@ -5,7 +5,7 @@
 ?>
 
 <main>
-	<div class="section" style="text-align: left;">
+	<section class="section" style="text-align: left;">
 		<div class="container">
 			<div class="section__heading">
 				<h1><?php the_title(); ?></h1>
@@ -23,7 +23,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </main>
 
 <?php get_footer(); ?>

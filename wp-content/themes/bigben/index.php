@@ -12,16 +12,16 @@
 
 <main>
 	<!-- Первый экран -->
-	<div class="first-screen overlay" style="background-image: url('<?= get_template_directory_uri() . '/assets/img/first-screen.jpg' ?>')">
+	<section class="first-screen overlay" style="background-image: url('<?= get_template_directory_uri() . '/assets/img/first-screen.jpg' ?>')">
 		<div class="container">
 			<div class="first-screen__content">
 				<h1><?= get_bloginfo('name') ?></h1>
 				<p class="text-muted"><?= get_bloginfo('description') ?></p>
 			</div>
 		</div>
-	</div>
+	</section>
 	<!-- Преимущества -->
-	<div class="section">
+	<section class="section">
 		<div class="container">
 			<div class="section__heading">
 				<h2>Наши преимущества</h2>
@@ -47,9 +47,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 	<!-- Услуги -->
-	<div class="section section_fluid">
+	<section class="section section_fluid">
 		<div class="container">
 			<div class="section__heading">
 				<h2>Заказать услугу</h2>
@@ -72,9 +72,9 @@
 				</form>
 			</div>
 		</div>
-	</div>
+	</section>
 	<!-- Преподаватели -->
-	<div class="section">
+	<section class="section">
 		<div class="container">
 			<div class="section__heading">
 				<h2>Наши преподаватели</h2>
@@ -100,9 +100,9 @@
 				<?php endif; ?>
 			</div>
 		</div>
-	</div>
+	</section>
 	<!-- Добавил чисто из-за того, что должны же типы секций чередоваться, ну, может потом уберу -->
-	<div class="section section_fluid">
+	<section class="section section_fluid">
 		<div class="container">
 			<div class="section__heading">
 				<h2>О нас</h2>
@@ -113,9 +113,9 @@
 				<p>Дошкольное образование – одно из наиболее перспективных направлений развития современного образования. Имидж, формирующийся в нашем сознании, влияет на восприятие, которое, в свою очередь, влияет на выбор. Школа дошкольного образования «Big Ben» решила выйти на новые горизонты рынка образовательных услуг.</p>
 			</div>
 		</div>
-	</div>
+	</section>
 	<!-- Новости -->
-	<div class="section">
+	<section class="section">
 		<div class="container">
 			<div class="section__heading">
 				<h2>Последние новости</h2>
@@ -141,7 +141,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </main>
 
 <?php get_footer(); ?>
