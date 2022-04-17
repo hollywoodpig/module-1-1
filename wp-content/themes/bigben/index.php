@@ -9,6 +9,11 @@
 		'post_type' => 'post'
 	]);
 
+	$services = new WP_Query([
+		'post_type' => 'services',
+		'posts_per_page' => -1
+	]);
+
 	$isServiceSent = false;
 
 	if (isset($_POST['service-submit'])) {
@@ -23,7 +28,7 @@
 		$email_to = get_option('admin_email');
 		$subject = 'Новая заявка';
 		$body = "Имя: $name \r\nТелефон: $tel \r\nПочта: $email \r\nПредполагаемая дата: $date \r\nУслуга: $service";
-		$headers = "From: $name <$email_to> \r\nReply-To: $email";
+		$headers = "From: $name <$email> \r\nReply-To: $email_to";
 
 		wp_mail($email_to, $subject, $body, $headers);
 
@@ -86,16 +91,17 @@
 		<div class="section__content">
 			<div class="container">
 				<form class="form form_inline" method="post">
-					<select name="service-option" class="input">
-						<option value="Английский язык для взрослых">Английский язык для взрослых</option>
-						<option value="Английский язык для школьников">Английский язык для школьников</option>
-						<option value="Индивидуальный английский язык">Индивидуальный английский язык</option>
-						<option value="Корпоративное обучение">Корпоративное обучение</option>
+					<select required name="service-option" class="input">
+						<?php if ($services->have_posts()): ?>
+							<?php while($services->have_posts()): $services->the_post(); ?>
+								<option value="<?php the_title(); ?>"><?php the_title(); ?></option>
+							<?php endwhile; ?>
+						<?php endif; ?>
 					</select>
 					<input required name="service-name" class="input" type="text" placeholder="Ваше имя">
 					<input required name="service-tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" class="input" type="tel" placeholder="8-800-555-35-35">
 					<input required name="service-email" class="input" type="email" placeholder="Ваша почта">
-					<input required name="service-date" class="input" type="date" placeholder="Предполагаемая дата">
+					<input required name="service-date" min="<?= date('Y-m-d'); ?>" class="input" type="date" placeholder="Предполагаемая дата">
 					<button name="service-submit" class="btn">Отправить</button>
 				</form>
 			</div>
