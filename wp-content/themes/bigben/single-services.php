@@ -9,9 +9,8 @@
 		<div class="container">
 			<div class="section__heading">
 				<h1><?php the_title(); ?></h1>
-				<strong class="text-muted"><?= get_the_date() ?></strong>
 				<?php foreach($terms as $term): ?>
-					<span class="text-accent"><?= $term->name ?></span>
+					<strong class="text-muted"><?= $term->name ?></strong>
 				<?php endforeach; ?>
 			</div>
 			<div class="section__content">

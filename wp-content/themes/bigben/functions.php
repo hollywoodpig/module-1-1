@@ -32,8 +32,8 @@
 	// news taxonomy
 
 	function flat_posts() {
-		register_taxonomy('category', array());
-		register_taxonomy('post_tag', array());
+		register_taxonomy('category', []);
+		register_taxonomy('post_tag', []);
 	}
 
 	add_action('init', 'flat_posts');

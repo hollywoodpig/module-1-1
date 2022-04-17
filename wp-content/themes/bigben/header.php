@@ -38,7 +38,7 @@
 							));
 						?>
 					</nav>
-					<a class="phone" href="tel:88005553535">8-(800)-555-35-35</a>
+					<a class="phone" href="tel:88005553535">8-800-555-35-35</a>
 				</div>
 				<div class="header__footer">
 					<nav class="nav nav_mobile <?= is_home() ? 'nav_home' : '' ?>">

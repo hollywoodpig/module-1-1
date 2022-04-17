@@ -458,6 +458,10 @@ small {
 	margin-top: 10rem;
 }
 
+.space-y {
+	margin: 20rem 0;
+}
+
 /* hamburger */
 
 .hamburger {

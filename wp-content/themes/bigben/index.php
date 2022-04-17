@@ -8,6 +8,27 @@
 	$news = new WP_Query([
 		'post_type' => 'post'
 	]);
+
+	$isServiceSent = false;
+
+	if (isset($_POST['service-submit'])) {
+		$service = $_POST['service-option'];
+		$name = $_POST['service-name'];
+		$tel = $_POST['service-tel'];
+		$email = $_POST['service-email'];
+		$date = $_POST['service-date'];
+
+		if (!isset($service) || !isset($name) || !isset($tel) || !isset($email) || !isset($date)) return;
+
+		$email_to = get_option('admin_email');
+		$subject = 'Новая заявка';
+		$body = "Имя: $name \r\nТелефон: $tel \r\nПочта: $email \r\nПредполагаемая дата: $date \r\nУслуга: $service";
+		$headers = "From: $name <$email_to> \r\nReply-To: $email";
+
+		wp_mail($email_to, $subject, $body, $headers);
+
+		$isServiceSent = true;
+	}
 ?>
 
 <main>
@@ -20,6 +41,13 @@
 			</div>
 		</div>
 	</section>
+	<?php if($isServiceSent): ?>
+		<div class="space-y">
+			<div class="item">
+				<p>Ваша заявка была успешно отправлена. Мы свяжемся с вами в ближайшее время (нет)</p>
+			</div>
+		</div>
+	<?php endif; ?>
 	<!-- Преимущества -->
 	<section class="section">
 		<div class="container">
@@ -57,18 +85,18 @@
 		</div>
 		<div class="section__content">
 			<div class="container">
-				<form class="form form_inline">
-					<select class="input">
+				<form class="form form_inline" method="post">
+					<select name="service-option" class="input">
 						<option value="Английский язык для взрослых">Английский язык для взрослых</option>
 						<option value="Английский язык для школьников">Английский язык для школьников</option>
 						<option value="Индивидуальный английский язык">Индивидуальный английский язык</option>
 						<option value="Корпоративное обучение">Корпоративное обучение</option>
 					</select>
-					<input class="input" type="text" placeholder="Ваше имя">
-					<input class="input" type="tel" placeholder="Ваш телефон">
-					<input class="input" type="email" placeholder="Ваша почта">
-					<input class="input" type="date" placeholder="Предполагаемая дата">
-					<button class="btn">Отправить</button>
+					<input required name="service-name" class="input" type="text" placeholder="Ваше имя">
+					<input required name="service-tel" pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" class="input" type="tel" placeholder="8-800-555-35-35">
+					<input required name="service-email" class="input" type="email" placeholder="Ваша почта">
+					<input required name="service-date" class="input" type="date" placeholder="Предполагаемая дата">
+					<button name="service-submit" class="btn">Отправить</button>
 				</form>
 			</div>
 		</div>
