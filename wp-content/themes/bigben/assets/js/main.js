@@ -1,4 +1,5 @@
 jQuery(document).ready(function() {
+	
 	// mobile menu
 
 	jQuery('.hamburger').click(function () {

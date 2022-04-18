@@ -75,7 +75,7 @@
 						<div class="item">
 							<strong class="item__title">Доступные цены</strong>
 						</div>
-						<a href="<?= get_page_link(66); ?>" class="btn">Записаться</a>
+						<a href="<?= get_page_link(66); ?>" class="btn">Список услуг</a>
 					</div>
 				</div>
 			</div>
@@ -115,7 +115,7 @@
 			</div>
 			<div class="section__content">
 				<?php if($teachers->have_posts()): ?>
-					<div class="teachers">
+					<div class="grid">
 						<?php while($teachers->have_posts()): $teachers->the_post(); ?>
 							<div class="item item_card">
 								<?php if(has_post_thumbnail()): ?>
@@ -127,7 +127,7 @@
 						<?php endwhile; ?>
 					</div>
 					<div class="space-t">
-						<a href="<?= get_page_link(68) ?>" class="btn">Полный список преподавателей</a>
+						<a href="<?= get_page_link(57) ?>" class="btn">Полный список преподавателей</a>
 					</div>
 				<?php else: ?>
 					<p>Это странно, но у нас пока что никто не работает.</p>
@@ -163,7 +163,7 @@
 									<img class="item__img" src="<?= get_the_post_thumbnail_url() ?>" alt="<?php the_title(); ?>">
 								<?php endif; ?>
 								<strong class="item__title"><?php the_title(); ?></strong>
-								<p class="item__text"><?= get_the_excerpt(); ?></p>
+								<small class="item__text"><?= get_the_excerpt(); ?></small>
 							</a>
 						<?php endwhile; ?>
 					</div>

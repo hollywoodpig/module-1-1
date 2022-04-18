@@ -131,7 +131,7 @@ small {
 /* container */
 
 .container {
-	width: 992px;
+	width: 768px;
 	max-width: 100%;
 	margin: 0 auto;
 	padding: 0 var(--gap);
@@ -428,18 +428,6 @@ small {
 	background: #fff;
 }
 
-/* teachers */
-
-.teachers {
-	display: flex;
-	flex-wrap: wrap;
-	gap: var(--gap);
-}
-
-.teachers .item {
-	flex: 1 0 120rem;
-}
-
 /* grid */
 
 .grid {
@@ -586,8 +574,13 @@ small {
 	}
 
 	.header .logo {
-		display: none;
+		order: 1;
+        flex: unset;
 	}
+
+    .header .phone {
+        flex: unset;
+    }
 
 	.grid {
 		grid-template-columns: 1fr;
@@ -595,10 +588,6 @@ small {
 }
 
 @media (max-width: 576px) {
-	.first-screen {
-		min-height: 150rem;
-	}
-
 	.advantages {
 		grid-template-columns: 1fr;
 	}
@@ -606,6 +595,10 @@ small {
 	.advantages__img {
 		display: none;
 	}
+
+    .advantages .item {
+        text-align: center;
+    }
 }
 
 /* min width */

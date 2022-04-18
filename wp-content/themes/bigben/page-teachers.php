@@ -17,7 +17,7 @@
 			</div>
 			<div class="section__content">
 				<?php if($teachers->have_posts()): ?>
-					<div class="teachers">
+					<div class="grid">
 						<?php while($teachers->have_posts()): $teachers->the_post(); ?>
 							<div class="item item_card">
 								<?php if(has_post_thumbnail()): ?>
