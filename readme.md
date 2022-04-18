@@ -1,15 +1,15 @@
-## Required plugins
+## Необходимые плагины
 * Custom social media widget
 
-## Pages
-* Contacts
-* Schools
-* News
-* Teachers
-* Services
+## Страницы
+* Контакты
+* Наши школы
+* Новости
+* Преподаватели
+* Услуги
 
 ## Menu
-* Contacts
-* Schools
-* News
-* Services
+* О нас
+* Наши школы
+* Новости
+* Услуги
